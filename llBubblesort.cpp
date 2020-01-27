@@ -130,9 +130,10 @@ int main(){
     a.check();
 
     cout<<"Size="<<a.size<<endl;
-    cout<<"Time taken to initialize Array="<<wtime2<<"s"<<endl;
-    cout<<"Time taken to Prallel Bubble Sort Array="<<wtime4<<"s"<<endl;
-    cout<<"Time taken to Bubble Sort Array="<<wtime6<<"s"<<endl;
+    cout<<"Time taken to initialize Array= "<<wtime2<<"s"<<endl;
+    cout<<"Time taken to Prallel Bubble Sort Array= "<<wtime4<<"s"<<endl;
+    cout<<"Time taken to Bubble Sort Array= "<<wtime6<<"s"<<endl;
+    cout<<"Speed up= "<<wtime6/wtime4<<endl;
 }
 /*
 g++ -fopenmp llBubblesort.cpp
@@ -142,7 +143,8 @@ Initialized Array
 Prallel Sorted Array
 Normal Sorted Array
 Size=10000
-Time taken to initialize Array=0.000734287s
-Time taken to Prallel Bubble Sort Array=0.0898749s
-Time taken to Bubble Sort Array=0.350319s
+Time taken to initialize Array= 0.000657213s
+Time taken to Prallel Bubble Sort Array= 0.193904s
+Time taken to Bubble Sort Array= 0.469301s
+Speed up= 2.42027
 */

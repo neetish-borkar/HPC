@@ -72,13 +72,16 @@ int main(){
     quick_sort(arr,0,n-1);
     double endtime2 = omp_get_wtime();
     cout<<"Serial Quick Sorting completed"<<endl;
-
-    cout << "Time Parallel: " << (endtime - starttime);
-    cout << "\nTime serial: " << (endtime2 - starttime2);
+    double ts=(endtime2 - starttime2);
+    double tp=(endtime - starttime);
+    cout << "Time Parallel: " << tp<<endl;
+    cout << "Time serial: " << ts<<endl;
+    cout<<"Speed up: "<<ts/tp<<endl;
 
     return 0;
 }
 /*
+g++ -fopenmp llquick_sort.cpp
 Enter the number of elements:
 12000
 Inserting elements
@@ -87,6 +90,7 @@ Sorting elements with parallel Quick Sort
 Parallel Quick Sorting completed
 Sorting elements with Serial Quick Sort
 Serial Quick Sorting completed
-Time Parallel: 0.0206267
-Time serial: 0.269715
+Time Parallel: 0.0236454
+Time serial: 0.27207
+Speed up: 11.5062
 */

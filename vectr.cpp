@@ -124,7 +124,7 @@ int arr1[10000],arr2[10000];
 int n1 ,n2;
 cout<<"\nEnter the count of numbers in first file\n";
 cin>>n1;
-cout<<"\n Enter the numbers\n";
+cout<<"Enter the numbers\n";
 for(int i=0;i<n1;i++)
 {
  arr1[i]=rand()%n1;
@@ -134,7 +134,7 @@ for(int i=0;i<n1;i++)
 insertintofile1(n1,arr1);
 cout<<"\nEnter the count of numbers in second  file\n";
 cin>>n2;
-cout<<"\n Enter the numbers\n";
+cout<<"Enter the numbers\n";
 double ts,tp;
 for(int i=0;i<n2;i++)
 {
@@ -148,19 +148,28 @@ insertintofile2(n2,arr2);
  start=omp_get_wtime();
 add(arr1,arr2,n1,n2);
  end=omp_get_wtime();
-cout<<"\n Time in sequential is "<<end-start;
+cout<<"\nTime in sequential is "<<end-start;
 ts=end-start;
  start=omp_get_wtime();
 addparallel(arr1,arr2,n1,n2);
 end=omp_get_wtime();
 tp=end-start;
-cout<<"\n Time in parallel is "<<end-start;
+cout<<"\nTime in parallel is "<<end-start;
 
-cout<<"\n Speed up "<<ts/tp;
-
-
-
-
-
-
+cout<<"\nSpeed up "<<ts/tp<<endl;
 }
+/*
+g++ -fopenmp vectr.cpp
+
+Enter the count of numbers in first file
+10000
+Enter the numbers
+
+Enter the count of numbers in second  file
+10000
+Enter the numbers
+
+Time in sequential is 0.0472238
+Time in parallel is 0.0706983
+Speed up 0.667961
+*/

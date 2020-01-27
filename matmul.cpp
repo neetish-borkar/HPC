@@ -65,3 +65,9 @@ int main()
     return 0;
 
 }
+/*
+g++ -fopenmp matmul.cpp
+tp = 2.01074
+ts = 5.15039
+Speed up = 2.56144
+*/
